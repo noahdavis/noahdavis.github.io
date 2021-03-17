@@ -2,8 +2,7 @@ import React, {Component} from "react"
 
 class Form extends Component {
     initialState = {
-        name: "",
-        job: ""
+        answer: ""
     }
 
     state = this.initialState
@@ -22,25 +21,17 @@ class Form extends Component {
     }
 
     render() {
-        const { name, job } = this.state;
+        const { answer } = this.state;
 
         return (
             <form>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="answer">Answer</label>
                 <input 
                     type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter a Name"
-                    value={name}
-                    onChange={this.handleChange} />
-                <label htmlFor="job">Job</label>
-                <input 
-                    type="text"
-                    name="job"
-                    id="job"
-                    placeholder="Enter a job"
-                    value={job}
+                    name="answer"
+                    id="answer"
+                    placeholder="Enter the correct answer"
+                    value={answer}
                     onChange={this.handleChange} />
                 <input type="button" value="Submit" onClick={this.submitForm} />
             </form>
